@@ -1,0 +1,34 @@
+<Title:>
+  Todos
+
+<Scripts:>
+  <!--<script type="text/javascript" src=""></script>-->
+    <!--<link rel="stylesheet" href="/jquery-ui.css" />-->
+
+
+<Body:>
+    <p>Drag items from left list into right list</p>
+    <ul>
+        <li id="textinput" class="draggable">Text Input 1</li>
+        <li id="textarea" class="draggable">Textarea</li>
+    </ul>
+
+    <ul id="sortable">
+        {#each _page.list as :item}
+            <derby:view view="{{:item.type}}" optional>
+        {/}
+  </ul>
+
+
+<textinput:>
+    <li class="formitem">
+        <div>Text Input</div>
+        <input class="textinput" value="{:item.text}">
+    </li>
+
+
+<textarea:>
+    <li class="formitem">
+        <div>Text Area</div>
+        <textarea class="textarea">{:item.text}</textarea>
+    </li>
